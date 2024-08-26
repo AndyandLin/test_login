@@ -6,8 +6,9 @@ import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.app.AlertDialog
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
+import com.example.myapplication.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 // 如果帳號或密碼錯誤，顯示錯誤對話框
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("登入失敗")
-                builder.setMessage("帳號或密碼錯誤")
+                builder.setMessage("員工編號或密碼錯誤")
                 builder.setPositiveButton("確定") { dialog, which ->
                     // 清除輸入框中的內容
                     Member_num_edit.text.clear()
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         addnewpower.setOnClickListener{
-            // 忘記密碼按鈕被點擊時執行以下代碼
+            // 新增權限被點擊時執行以下代碼
             val intent = Intent(this, addnewpower_page::class.java)
             startActivity(intent)
         }

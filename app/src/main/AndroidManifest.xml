@@ -13,28 +13,32 @@
         android:theme="@style/Theme.Test_login"
         tools:targetApi="31">
         <activity
-            android:name=".Home_page_Act"
-            android:exported="false"
-            android:label="@string/title_activity_home_page" />
-        <activity
-            android:name=".ui.home_page_Act"
-            android:exported="false"
-            android:label="@string/title_activity_home_page" />
-        <activity
-            android:name=".addnewpower_page"
-            android:exported="false" />
-        <activity
-            android:name=".forget_PWD_page"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name="com.example.test_login.MainActivity"
+            android:exported="true">  <!-- 這個Activity是否可以被其他app呼叫 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 新增 Home_page_Act 的配置 -->
+        <activity
+            android:name="com.example.test_login.Home_page_Act"
+            android:exported="false"
+            android:label="@string/title_activity_home_page" />
+
+        <!-- 新增 addnewpower_page 的配置 -->
+        <activity
+            android:name="com.example.test_login.addnewpower_page"
+            android:exported="false"
+            android:label="@string/add_new_power_page"/>
+
+        <!-- 新增 forget_PWD_page 的配置 -->
+        <activity
+            android:name="com.example.test_login.forget_PWD_page"
+            android:exported="false"
+            android:label="@string/forget_pwd_page"/>
     </application>
 
 </manifest>

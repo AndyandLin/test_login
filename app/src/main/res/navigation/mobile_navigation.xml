@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.test_login.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_case_manegement"
+        android:name="com.example.test_login.ui.caseManagement.CaseManagementFragment"
+        android:label="title_case_manegement"
+        tools:layout="@layout/fragment_case_management" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.test_login.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_edit_file"
+        android:name="com.example.test_login.ui.editfile.EditFileFragment"
+        android:label="title_edit_file"
+        tools:layout="@layout/fragment_edit_file" />
+    <fragment
+        android:id="@+id/navigation_personal_info"
+        android:name="com.example.test_login.ui.personalinfo.PersonalInfoFragment"
+        android:label="title_personalInfo"
+        tools:layout="@layout/fragment_personal_info" />
 </navigation>

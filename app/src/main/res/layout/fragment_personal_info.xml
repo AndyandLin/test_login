@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.test_login.ui.personalinfo.PersonalInfoFragment">
+
+    <TextView
+        android:id="@+id/text_personal_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="個人資料"
+        android:textAlignment="center"
+        android:textColor="#C75C5C"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 姓名 -->
+    <TextView
+        android:id="@+id/labelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="24dp"
+        android:text="姓名："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_personal_info" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="276dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="北護專題測試"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:text="北護專題測試"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/labelName"
+        app:layout_constraintTop_toBottomOf="@id/text_personal_info" />
+
+    <!-- 身分證字號 -->
+    <TextView
+        android:id="@+id/labelIDNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="身分證字號："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextIDNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="A123456789"
+        android:inputType="text"
+        android:padding="12dp"
+        android:text="A123456789"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelIDNumber"
+        app:layout_constraintTop_toBottomOf="@id/editTextName" />
+
+    <!-- 出生年月日 -->
+    <TextView
+        android:id="@+id/labelBirthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="出生年月日："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextIDNumber" />
+
+    <TextView
+        android:id="@+id/editTextBirthDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelBirthDate"
+        app:layout_constraintTop_toBottomOf="@id/editTextIDNumber" />
+
+    <!-- 聯絡電話 -->
+    <TextView
+        android:id="@+id/labelPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="聯絡電話："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextBirthDate" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="273dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:inputType="phone"
+        android:padding="12dp"
+        android:text="0912345678"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/labelPhone"
+        app:layout_constraintTop_toBottomOf="@id/editTextBirthDate" />
+
+    <!-- 使用者帳號 -->
+    <TextView
+        android:id="@+id/labelUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="使用者帳號："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="test_ntunhs"
+        android:inputType="text"
+        android:padding="12dp"
+        android:text="test_ntunhs"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/labelUsername"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone" />
+
+    <!-- 機構 -->
+    <TextView
+        android:id="@+id/labelOrganization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="機構："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextUsername" />
+
+    <EditText
+        android:id="@+id/editTextOrganization"
+        android:layout_width="275dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="NTUNHS"
+        android:inputType="text"
+        android:padding="12dp"
+        android:text="NTUNHS"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/labelOrganization"
+        app:layout_constraintTop_toBottomOf="@id/editTextUsername" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/labelEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:text="Email："
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextOrganization" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="273dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:text="testntunhs@gmail.com"
+        android:textColor="#C75C5C"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/labelEmail"
+        app:layout_constraintTop_toBottomOf="@id/editTextOrganization" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="117dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/login_button_selector"
+        android:backgroundTint="#C75C5C"
+        android:text="儲存"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

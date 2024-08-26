@@ -8,13 +8,21 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/navigation_case_manegement"
+        android:icon="@drawable/case_management_icon"
+        android:title="@string/case_manegement"
+        />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_edit_file"
+        android:icon="@drawable/edit_file_icon"
+        android:title="@string/edit_file" />
+
+    <item
+        android:id="@+id/navigation_personal_info"
+        android:icon="@drawable/personal_info_icon"
+        android:title="@string/personal_information" />
+
+
 
 </menu>

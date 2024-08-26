@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.R
 import kotlin.random.Random
 
 class addnewpower_page : AppCompatActivity() {
@@ -28,9 +29,7 @@ class addnewpower_page : AppCompatActivity() {
         val pwd_edit2 = findViewById<EditText>(R.id.pwd_edit2)
 
         back_login_btn2.setOnClickListener{
-            // 返回登入頁面
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish() // 結束當前 Activity
         }
 
         // 檢查按鈕點擊事件
@@ -80,6 +79,18 @@ class addnewpower_page : AppCompatActivity() {
                 // 顯示輸入欄位未完整或使用者編號無效的提示
                 Toast.makeText(this, "請輸入完整的註冊資訊並完成檢查", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    // 儲存上一次按返回鍵的時間，以實現雙擊返回退出的功能
+    var lastTime : Long = 0
+    override fun finish(){
+        val currentTime = System.currentTimeMillis()
+        if(currentTime - lastTime > 3 * 1000){ // 如果距離上一次按返回鍵超過3秒
+            lastTime = currentTime
+            Toast.makeText(this,"再按一下離開", Toast.LENGTH_LONG).show()
+        } else{ // 如果在3秒內再次按返回鍵，則執行父類的 finish() 方法，退出 Activity
+            super.finish()
         }
     }
 }

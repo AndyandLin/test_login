@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Add your survey questions here, for example -->
+    <TextView
+        android:id="@+id/question1TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我到人多的地方，無法應付那種壓力很大的感覺。"/>
+
+    <Spinner
+        android:id="@+id/answer1Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/yes_no_options"/>
+
+    <!-- Add more questions and answer options as needed -->
+
+    <Button
+        android:id="@+id/submitSurveyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交問卷"/>
+</LinearLayout>

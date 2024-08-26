@@ -2,7 +2,11 @@
     <string name="app_name">test_login</string>
     <string name="forget_PWD">忘記密碼</string>
     <string name="title_activity_home_page">Home_page_Act</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">首頁</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_new_power_page">新增權限</string>
+    <string name="forget_pwd_page">忘記密碼</string>
+    <string name="case_manegement">個案管理</string>
+    <string name="edit_file">單張管理</string>
+    <string name="personal_information">個人資料</string>
 </resources>

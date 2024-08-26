@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import kotlin.random.Random
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.R
 
 class forget_PWD_page : AppCompatActivity() {
 
@@ -54,9 +55,7 @@ class forget_PWD_page : AppCompatActivity() {
         }
 
         back_login_btn.setOnClickListener{
-            // 返回登入頁面
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish() // 結束當前 Activity
         }
     }
 
@@ -84,5 +83,17 @@ class forget_PWD_page : AppCompatActivity() {
             startActivity(intent)
         }
         builder.show()
+    }
+
+    // 儲存上一次按返回鍵的時間，以實現雙擊返回退出的功能
+    var lastTime : Long = 0
+    override fun finish(){
+        val currentTime = System.currentTimeMillis()
+        if(currentTime - lastTime > 3 * 1000){ // 如果距離上一次按返回鍵超過3秒
+            lastTime = currentTime
+            Toast.makeText(this,"再按一下離開", Toast.LENGTH_LONG).show()
+        } else{ // 如果在3秒內再次按返回鍵，則執行父類的 finish() 方法，退出 Activity
+            super.finish()
+        }
     }
 }
