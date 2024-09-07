@@ -118,6 +118,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.663" />
 
+    <EditText
+        android:id="@+id/new_password_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_plaintext"
+        android:ems="10"
+        android:hint="新密碼"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755" />
+
     <Button
         android:id="@+id/back_login_btn"
         android:layout_width="142dp"
@@ -131,7 +148,7 @@
         app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <Button
         android:id="@+id/send_btn"
@@ -146,7 +163,7 @@
         app:layout_constraintHorizontal_bias="0.836"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <Button
         android:id="@+id/chk_button"
@@ -162,4 +179,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

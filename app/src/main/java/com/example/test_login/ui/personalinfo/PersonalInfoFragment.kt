@@ -1,6 +1,7 @@
 package com.example.test_login.ui.personalinfo
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,8 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.myapplication.databinding.FragmentPersonalInfoBinding
+import com.example.test_login.MainActivity
+import com.example.test_login.addnewpower_page
 import com.example.test_login.util.DateUtils
 
 // 定義 PersonalInfoFragment 繼承自 Fragment
@@ -49,6 +52,12 @@ class PersonalInfoFragment : Fragment() {
         // 當保存按鈕被點擊時，顯示提示信息，並保存個人資訊
         binding.saveButton.setOnClickListener{
             savePersonalInfo()
+        }
+
+        // 登出被點擊時執行以下代碼
+        binding.logoutBtn.setOnClickListener{
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
         }
 
         // 觀察 ViewModel 中的個人資訊數據變化，並將數據綁定到 UI 上

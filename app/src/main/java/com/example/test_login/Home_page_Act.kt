@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomePageBinding
 import com.example.myapplication.databinding.ActivityMainBinding
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Home_page_Act : AppCompatActivity() {
