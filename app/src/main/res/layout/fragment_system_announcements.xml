@@ -17,9 +17,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:gravity="center"
                 android:padding="8dp"
                 android:text="分類"
+                android:gravity="center"
                 android:textColor="#A52626"
                 android:textSize="16sp"
                 android:textStyle="bold" />

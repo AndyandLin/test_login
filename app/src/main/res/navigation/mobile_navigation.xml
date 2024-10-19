@@ -21,10 +21,69 @@
         android:id="@+id/navigation_edit_file"
         android:name="com.example.test_login.ui.editfile.EditFileFragment"
         android:label="title_edit_file"
-        tools:layout="@layout/fragment_edit_file" />
+        tools:layout="@layout/fragment_edit_file">
+        <action
+            android:id="@+id/action_editFileFragment_to_healthSurveyFragment"
+            app:destination="@id/navigation_health_survey" />
+        <action
+            android:id="@+id/action_editFileFragment_to_otherSurveyFragment"
+            app:destination="@id/navigation_other_survey_manage" />
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_personal_info"
         android:name="com.example.test_login.ui.personalinfo.PersonalInfoFragment"
         android:label="title_personalInfo"
         tools:layout="@layout/fragment_personal_info" />
+
+    <!-- 腦健康問券 -->
+    <fragment
+        android:id="@+id/navigation_health_survey"
+        android:name="com.example.test_login.ui.healthsurvey.HealthSurveyFragment"
+        android:label="title_health_survey"
+        tools:layout="@layout/fragment_health_survey">
+        <action
+            android:id="@+id/action_healthSurveyFragment_to_surveyResultFragment"
+            app:destination="@id/navigation_survey_result" /> <!-- 導航到 SurveyResultFragment -->
+    </fragment>
+
+    <!-- 腦健康問券 結果 -->
+    <fragment
+        android:id="@+id/navigation_survey_result"
+        android:name="com.example.test_login.ui.surveyResult.SurveyResultFragment"
+        android:label="title_survey_result"
+        tools:layout="@layout/fragment_survey_result">
+        <action
+            android:id="@+id/action_surveyResultFragment_to_editfileFragment"
+            app:destination="@id/navigation_edit_file" /> <!-- 新增返回 HealthSurveyFragment 的動作 -->
+    </fragment>
+
+    <!-- 新增 其他表單管理 -->
+    <fragment
+        android:id="@+id/navigation_other_survey_manage"
+        android:name="com.example.test_login.ui.otherSurveyManage.OtherSurveyManageFragment"
+        android:label="title_other_survey_manage"
+        tools:layout="@layout/fragment_other_survey_manage" >
+    <action
+        android:id="@+id/action_otherSurveyManageFragment_to_firstEvaluationFragment"
+        app:destination="@id/firstEvaluationFragment" />
+        <action
+            android:id="@+id/action_otherSurveyManageFragment_to_closingAgreementFragment"
+            app:destination="@id/closingAgreementFragment" />
+    </fragment>
+
+    <!-- 初次評估單 -->
+    <fragment
+        android:id="@+id/firstEvaluationFragment"
+        android:name="com.example.test_login.ui.survey.FirstEvaluationFragment"
+        android:label="初次評估單"
+        tools:layout="@layout/fragment_first_evaluation" />
+
+    <!-- 結案單 -->
+    <fragment
+        android:id="@+id/closingAgreementFragment"
+        android:name="com.example.test_login.ui.survey.ClosingAgreementFragment"
+        android:label="結案單"
+        tools:layout="@layout/fragment_closing_agreement" />
+
 </navigation>

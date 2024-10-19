@@ -1,0 +1,2966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5E6D3"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 標題 -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_basic_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="初次評估單"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- 基本資料區域 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- 標題：初次評估單-基本資料 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初次評估單-基本資料"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 姓名 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 性別 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="性別："
+                        android:textSize="16sp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="男性"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="女性"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="多元"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- 出生年月日 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_birthdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="出生年月日 (年/月/日)"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 收案日期 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_received_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="收案日期 (年/月/日)"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 身分證字號 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_id_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="身分證字號"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_verify_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="帶入資料"
+                        android:textSize="15sp"
+                        app:cornerRadius="8dp"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="#C75C5C"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- 教育程度 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="教育程度">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_education"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 诊断别 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_diagnosis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="診斷別"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 連絡電話 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_contact_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="連絡電話"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 住院次數輸入區域 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/hospitalization_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_arrow_drop_down">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_hospitalization_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="住院次數"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 戶籍地址 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_registered_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="戶籍地址"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 通訊地址 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_mailing_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="通訊地址"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 目前住址 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_current_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="目前住址" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 居住情形 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="居住情形">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_living_situation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 就業現況 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_employment_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:hint="就業狀態"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 婚姻狀態 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_marital_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:hint="婚姻狀態"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 主要聯絡人 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_main_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="主要聯絡人"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 與個案關係 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_relationship"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:hint="與個案關係"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 其他關係說明 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_other_relationship"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="其他關係說明" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 聯絡人電話 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/contact_person_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="聯絡人電話"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 計畫轉介告知 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="計畫轉介告知："
+                        android:textSize="16sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_referral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_referral_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="是"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_referral_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 過去就醫狀況區域 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="過去就醫狀況"
+                    android:textColor="#C75C5C"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 未曾就醫 -->
+                <RadioGroup
+                    android:id="@+id/radioGroupMedicalHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/radioNoMedical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="未曾就醫，請說明："/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextNoMedical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請說明"
+                        android:visibility="gone"/>
+
+                    <RadioButton
+                        android:id="@+id/radioYesMedical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="曾就醫，醫療院所："/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMedicalInstitution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="醫療院所"
+                        android:visibility="gone"/>
+                </RadioGroup>
+
+                <!-- 醫師姓名 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_doctor_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="醫師姓名"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 初評單-病情症狀評估 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初評單-病情症狀評估"
+                    android:textColor="#C75C5C"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 情緒狀態 下拉式選單 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="情緒狀態">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/input_emotion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:padding="12dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <!-- 思考 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="思考："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_thoughts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="無異狀"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_abnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="思考不連貫"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_irrelevant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="答非所問"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_incoherent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="語無倫次"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_delusions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="妄想"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <!-- 妄想子選項 -->
+                    <LinearLayout
+                        android:id="@+id/layout_delusions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="妄想類型："
+                            android:textSize="18sp"
+                            android:layout_marginBottom="8dp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_delusion_persecution"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="被害"
+                            android:textSize="16sp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_delusion_relationship"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="關係"
+                            android:textSize="16sp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_delusion_exaggeration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="誇大"
+                            android:textSize="16sp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_delusion_jealousy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="嫉妒"
+                            android:textSize="16sp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_delusion_strange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="怪異"
+                            android:textSize="16sp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_delusion_religious"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="宗教"
+                            android:textSize="16sp"/>
+
+                        <!-- 其他選項 -->
+                        <CheckBox
+                            android:id="@+id/check_delusion_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他"
+                            android:textSize="16sp"/>
+                        <!-- 妄想輸入框 -->
+                        <EditText
+                            android:id="@+id/editTextDelusions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="請輸入妄想的其他症狀"/>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_ideas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="意念"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <!-- 意念子選項 -->
+                    <LinearLayout
+                        android:id="@+id/layout_ideas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="意念類型："
+                            android:textSize="18sp"
+                            android:layout_marginBottom="8dp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_idea_murder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="殺人"
+                            android:textSize="16sp"/>
+
+                        <CheckBox
+                            android:id="@+id/check_idea_suicide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="自殺"
+                            android:textSize="16sp"/>
+
+                        <!-- 其他選項 -->
+                        <CheckBox
+                            android:id="@+id/check_idea_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他"
+                            android:textSize="16sp"/>
+                        <!-- 意念輸入框 -->
+                        <EditText
+                            android:id="@+id/editTextIdeas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="請輸入意念的其他症狀"/>
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/check_thoughts_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+                    <!-- 其他數入框 -->
+                    <EditText
+                        android:id="@+id/editText_others"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入其他症狀"/>
+                </LinearLayout>
+
+                <!-- 分隔線 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <!-- 知覺 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="知覺："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/check_perception_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="正常知覺"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_perception_hallucinations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="幻聽"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_perception_visual_hallucinations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="幻視"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_perception_olfactory_hallucinations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="嗅幻覺"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_perception_tactile_hallucinations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="觸幻覺"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_perception_somatic_hallucinations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="體幻覺"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_perception_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <!-- 知覺其他輸入框 -->
+                    <EditText
+                        android:id="@+id/editTextPerceptionOthers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入知覺的其他症狀"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <!-- 睡眠 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="睡眠："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/check_sleep_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="無異狀"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_sleep_insomnia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="失眠"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_sleep_hypersomnia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="嗜睡"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_sleep_fragmented"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="睡眠片斷"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_sleep_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <!-- 睡眠其他輸入框 -->
+                    <EditText
+                        android:id="@+id/editTextSleepOthers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入睡眠的其他症狀"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <!-- 行為 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="行為："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="無異狀"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_self_talk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="自言自語"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_withdrawn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="退縮寡言"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_wandering"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="四處遊蕩"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_strange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="怪異行為"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_aggressive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="攻擊行為"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_destruction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="破壞行為"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_self_harm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="自傷行為"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_low_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="活動量低"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_high_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="活動量高"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_restlessness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="坐立不安"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_agitation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="激動不安"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_compulsive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="強迫行為"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_bedridden"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="整日躺床"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_laughing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="傻笑"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_behavior_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <!-- 行為其他輸入框 -->
+                    <EditText
+                        android:id="@+id/editTextBehaviorOthers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入行為的其他症狀"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <!-- 態度 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="態度："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/check_status_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="無異狀"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_status_abnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="多疑"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_status_defensive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="防備"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_status_hostile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="敵視"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <CheckBox
+                        android:id="@+id/check_status_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他"
+                        android:textSize="16sp"
+                        android:padding="8dp"/>
+
+                    <!-- 態度其他輸入框 -->
+                    <EditText
+                        android:id="@+id/editTextStatusOthers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入態度的其他症狀"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 初評單-照護處置建議 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="初評單-照護處置建議"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="過去就醫狀況："
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 選項 -->
+                <RadioGroup
+                    android:id="@+id/radioGroupMedicalHistorySuggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/radioReferralPublicHealth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:text="轉介公衛體系"/>
+
+                    <RadioButton
+                        android:id="@+id/radioReferralMedicalInstitution"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:text="轉介原執行訪視評估之醫療機構"/>
+
+                    <!-- 新增的 RadioGroup -->
+                    <RadioGroup
+                        android:id="@+id/radioGroupReferralOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="20dp"
+                        android:visibility="gone"> <!-- 初始隱藏 -->
+
+                        <RadioButton
+                            android:id="@+id/radioVisitMedicalInstitution"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="醫療機構訪視"/>
+
+                        <RadioButton
+                            android:id="@+id/radioEscortToMedical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="護送就醫"/>
+                    </RadioGroup>
+
+                    <RadioButton
+                        android:id="@+id/radioReferralOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:text="轉介其他醫療機構"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextOtherInstitution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入曾轉介的其他醫療機構"/>
+
+                    <RadioButton
+                        android:id="@+id/radioNoNeedAssistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:text="不需要精神醫療協助，由原網絡系統持續提供服務"/>
+
+                    <RadioButton
+                        android:id="@+id/radioOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="8dp"
+                        android:text="其他"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入其他過去就醫狀況"/>
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 初評單-高風險檢傷評分量表 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初評單-高風險檢傷評分量表"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="危險性"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：清楚表現或幻覺(聽到命令)有自殺或他殺的念頭，或此次發病期已經有一次嚴重難以預測、衝動、暴力的行為。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：表現或幻覺(聽到命令)有自殺或他殺的念頭，但是並不確信，或者這些行為是因環境壓力引起。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：表現有自殺或他殺的念頭，但是猶豫不定，或者只有無效的作態行為。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：有一些自殺或他殺的念頭或行為，或者曾經有過，但是是清楚表明想要控制且能夠控制。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：沒有自殺或他殺的念頭或行為。過去沒有者行為。"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 危險性評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="選擇評分">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_danger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="支持系統"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：沒有家人、朋友或其他可依靠的人。機構沒有辦法可以提供立即的需求支持。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：有一些支持系統可以被運用，但是效果有限。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：支持系統有機會可以被運用，但是動員它們有明顯的困難存在。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：有關心的家人、朋友或其他人，但不確定是否能提供協助或有意願支持。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：有關心的家人、朋友或其他人，而且有能力跟意願提供需要的支持。"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 支持系統評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="選擇評分">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_support"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="合作能力"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：無法合作，或主動表示拒絕。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：合作意願不高。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：被動接受協助介入措施。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：希望被幫助但是猶豫不決，或者動機不強。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：主動尋求治療，願意而且有能力合作。"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- 合作能力評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="選擇評分">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_collaboration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <!-- 評估分數 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="評估分數："
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupAssessment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioEmergency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(8-15分) 緊急護送就醫處置，並回報衛生局知悉。"/>
+
+                    <RadioButton
+                        android:id="@+id/radioContinuing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(5-7分) 連結醫療資源"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="醫療院所："
+                        android:layout_marginTop="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMedicalInstitutions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請輸入醫療院所"/>
+
+                    <RadioButton
+                        android:id="@+id/radioTransfer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(4分) 轉介衛生局，由衛生局啟動關懷訪視服務。"/>
+
+                    <RadioButton
+                        android:id="@+id/radioNoNeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不需要精神醫療協助，由原網絡系統持續提供服務"
+                        android:layout_marginTop="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupNoneed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="20dp"
+                        android:visibility="gone"> <!-- 初始隱藏 -->
+
+                        <RadioButton
+                            android:id="@+id/radioFamilyConflict"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="家庭常態互動下之衝突(如：權力控制、需求未被滿足之暴力、價值觀及溝通失調、親密關係受損、親子教養過當等)"/>
+
+                        <RadioButton
+                            android:id="@+id/radioImpulse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="情境下的一時衝動"/>
+
+                        <RadioButton
+                            android:id="@+id/radioSubstanceAbuse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="個案酒藥癮濫用誘發事件之因素"/>
+
+                        <RadioButton
+                            android:id="@+id/radioPersonalityTraits"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="個案個性特質因素(如：個性固著、情緒容易起伏或過於敏感)"/>
+
+                        <RadioButton
+                            android:id="@+id/radioOtherReason"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他："/>
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextOtherReason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="請輸入其他原因"/>
+                    </RadioGroup>
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- 精神疾病患者社區復健評量表 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="初評單-精神疾病患者社區復健
+                    評量表"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="一、權重症狀"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：重度症狀，對生活干擾極嚴重，一般人觀察即發現有異狀。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：中度症狀，對生活有明顯干擾，家人或專業人員觀察即發現症狀。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：輕度症狀，對生活無太大干擾，經詢問才可發現症狀。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：無明顯精神症狀。"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 積極症狀評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_positive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="說明(重度與中度症狀說明)："
+                    android:textSize="16sp"
+                    android:textColor="@color/text_red"/>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_Description_symptoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="請說明"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二、退化症狀"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：重度退化，極少有人際關係之興趣與活動動機，維持鼓勵之，亦不參與活動，動生活程度極低，不活潑，個人衛生差，情感一直平板，因思考極。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：中度退化，人際關係之興趣與活動動機低，要積極鼓勵才可以參與活動，而且不能持久，個人衛生差，情感很混濁，講話時，思考內容甚少。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：輕度退化，人際關係與活動狀況輕微，均在被動情況下才參與活動，參與活動之持久性不高，個人衛生差，情感較貧乏，思考內容不多。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：無退化症狀，人際關係與活動皆能即時參與。"
+                    android:layout_marginBottom="8dp"  />
+
+                <!-- 退化症狀評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_Degenerate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="三、自傷傾向"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：極度傾向，二再重複手段致的危險。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：重度傾向，有具體行為。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：中度傾向，意念存在。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：輕度傾向，念念不定。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：無明顯傾向。"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 自傷傾向評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_self_harm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四、暴力傾向"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：極度傾向，強烈妄想或幻想，曾個人或他人遭害。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：重度傾向，曾攻擊別人，但無結果。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：中度傾向，想要傷害或毀壞物品。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：輕度傾向，口頭威脅。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：無暴力傾向。"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 暴力傾向評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_violence"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="五、人際關係"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6分：與人有衝突，不易相處或層面深鎖，刻意孤僻生活。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：與人相處退縮，有意避免開別人或發脾氣，但不致明顯衝突。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：與人相處，顏的被動或情緒不穩，但無大礙。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：一般人與人處之無困難，與人相處沒有困難，少有朋友，無社交生活。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：一般人與人處之人際關係得體，有朋友，偶有社交生活。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：較一般人更能處理人際關係，有朋友來往，常有社交活動，可以享受人際樂趣。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：人際關係良好，容易交朋友，常有社交活動，心胸開闊，能主動，助人為樂。"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 人際關係評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_interpersonal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="六、工作、家務或功課"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6分：沒有工作又無動機找工作，沒有動機做家務或上學。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：只偶爾工作，找工作不熱心；只偶爾做家事，做事不熱心；只偶爾上學，上學不熱心。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：工作不穩定，時常換工作，時常不規則上班；只被動的做家事，做得不理想；只被動上學，時常不上學，應付上學而已。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：有工作，工作表現尚可，感受相當正常；主動做家務或上學，但表現馬馬虎虎。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：工作表現良好，工作壓力能力能順利，家務或功課表現良好。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：工作、家務、功課表現優良，沒有感受壓力，能順利處理工作、家務、功課之困難，同時獲得樂趣。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：工作、家務、功課表現極優，能順利上司、家人、老闆的器重，並能幫助同事、家人，同樣處理特殊難題，工作、家務、功課，十分樂趣。"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 工作評分 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_work"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="七、時間分配"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6分：成天無所事事，沒有特殊活動。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：只偶被動的參與活動，空閒時間多，但工作與休閒少。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：只偶爾有主動的活動，大部分為被動參與，多空間與生活時間安排凌亂。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：鮮有社交活動，工作緊湊，沒有休閒。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：工作緊湊，有休閒活動，但缺社交。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：工作與休閒有良好調配，偶有社交活動。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：生活悠閒，工作與社交時間有理想的調配。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_time_allocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="八、家庭生活"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6分：與家人常常有衝突，對家庭生活不負責任，在家庭生活中感到痛苦。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5分：不理會家庭生活，對家庭生活時有抱怨，與家人個有衝突。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4分：不照顧家庭生活，或不理會家人，只獨處房間，但無明顯衝突。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3分：能照顧家庭生活，與家人少溝通，可正常生活，缺少感情來往。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2分：對家庭負責盡職，與家人和好相處。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1分：主動關心家人生活，對家庭負責盡職，生活融洽，有說有笑，有家庭生活之樂趣。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：對家庭負責盡職，生活融洽，主動關心家人，能主動安排家庭生活的種種活動，頗能享受家庭生活樂趣。"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_family_life"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="物質濫用病史"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_substance_abuse_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="無" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_smoke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="煙" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_alcohol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="酒" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_illegal_drugs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="違禁藥" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_medication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="治療藥" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_explanation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="說明：" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_explanation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初評單 - GAF"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="請先閱讀以下說明後，再填入GAF評估分數">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_gaf_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GAF評分說明："
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100-91："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="廣泛活動的功能能量極好，無任何問題；沒有症狀。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90-81："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="無顯著的症狀（如情緒或行為問題），各方面功能表現良好，但會因自身問題或壓力而偶爾感到困擾（如偶爾焦慮或情緒低落）。"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80-71："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="可再稍微調整的功能程度（如家庭或社交方面），有些症狀的社交職能能力稍有下降（如輕微的焦慮）。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70-61："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="已顯著降低的功能（如失業或人際關係），並且常常出現功能的計畫（如偶爾感到焦慮或無法集中注意力），但大致功能還是良好。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60-51："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="中等程度的功能（如工作或社交活動），或在生活中，職務功能中有些困難（如朋友少，因而感到情緒低落）。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50-41："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="嚴重的功能障礙（如情緒低落），無法維持工作或社交活動，並且有一段時間無法工作（無法照顧自己）。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40-31："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="有明顯的功能障礙（如無法維持工作），社交活動幾乎無法進行，生活能力顯著下降。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30-21："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="行為極度不穩定或無法控制，無法維持基本的生活能力（如無法照顧自己），行為極端而不合適。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20-11："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="有嚴重的自我照顧能力的缺乏（如無法照顧自己），時常無法控制情緒，行為極端而不合適，個人無法維持基本的生活能力。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10-1："
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="有嚴重的自我照顧能力的缺乏，生活無法自理，無法維持基本的生活能力。" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0分：資源不足。" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初評單 - PSP量表"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一、一般角色功能"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_general_function"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二、人際與社交關係"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_interpersonal_relationships"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三、自我照顧能力"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_self_care_ability"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四、干擾與攻擊行為"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_disruptive_behavior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初評單 - 照顧者負荷量表 (CBI)"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. 您是否覺得因為照顧患者花費太多時間，以致沒有足夠的時間留給自己？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. 您是否覺得在照顧患者和您的家庭、工作上其他責任會有衝突？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. 當您在患者周圍時，您是否覺得生氣？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. 您是否覺得患者對您和其他家人、朋友的關係有負面影響？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. 當患者在您身邊時，您是否覺得緊張（有壓力）？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6. 您是否覺得因為照顧患者而影響到自己的健康？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7. 您是否覺得因為患者而不能擁有隨心所欲的隱私？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8. 您是否覺得因為要照顧患者而錯失自己的社交生活？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9. 您是否覺得自從患者生病後，您的生活失去控制？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10. 您是否不確定如何照顧患者？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11. 您是否覺得應該為患者多做一些？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12. 您是否覺得在照顧患者方面您還可以做得更好？"
+                    android:textColor="@color/text_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="---選擇評分---">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_question_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="初評單 - 社會資源"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="就業身分："
+                    android:textStyle="bold"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_health"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="健康" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_welfare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="福利" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_other_employment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="請填寫其他" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身心障礙證明："
+                    android:textStyle="bold"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_mild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="輕度" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_moderate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中度" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_severe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重度" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_extreme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="極重度" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_Disabled_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="無" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="福利資源使用："
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_none_resources"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="無" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_low_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中低收入戶身心障礙津貼" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_low_income_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="低收入戶津貼" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_undetermined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="不詳" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_other_resources"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="請填寫其他" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="居住型態："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_living_alone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="獨居" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_living_with_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="與其他親友同住" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_other_living"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_other_living"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="請填寫其他" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="家庭照顧型態："
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_primary_caregiver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有主要照顧者" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_shared_care"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="家庭輪流照顧" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_other_care"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_other_care"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="請填寫其他" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 提交按鈕 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提交"
+            android:textSize="20sp"
+            android:padding="12dp"
+            app:cornerRadius="8dp"
+            android:backgroundTint="@color/text_red"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>

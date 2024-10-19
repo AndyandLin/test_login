@@ -1,4 +1,4 @@
-package com.example.test_login.ui.fragments.CommonFormsFragment
+package com.example.test_login.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

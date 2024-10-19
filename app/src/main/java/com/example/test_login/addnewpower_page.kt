@@ -26,6 +26,9 @@ class addnewpower_page : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_addnewpower_page)
 
+        // 測試 Toast
+        Toast.makeText(this, "Activity Created", Toast.LENGTH_SHORT).show()
+
         val retrofit = Retrofit.Builder()
             .baseUrl("http://10.0.2.2:8000/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -43,7 +46,8 @@ class addnewpower_page : AppCompatActivity() {
         val hospitalCodeEdit = findViewById<EditText>(R.id.Hospital_Code)
 
         back_login_btn2.setOnClickListener {
-            finish()
+            val intent = Intent(this@addnewpower_page, MainActivity::class.java)
+            startActivity(intent)
         }
 
         chk_button2.setOnClickListener {
@@ -121,7 +125,6 @@ class addnewpower_page : AppCompatActivity() {
                         Toast.makeText(this@addnewpower_page, "註冊成功", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@addnewpower_page, MainActivity::class.java)
                         startActivity(intent)
-                        finish()
                     } else {
                         Toast.makeText(this@addnewpower_page, "註冊失敗：${result?.message}", Toast.LENGTH_SHORT).show()
                     }
@@ -134,16 +137,5 @@ class addnewpower_page : AppCompatActivity() {
                 Toast.makeText(this@addnewpower_page, "網絡錯誤：${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
-    }
-
-    var lastTime: Long = 0
-    override fun finish() {
-        val currentTime = System.currentTimeMillis()
-        if (currentTime - lastTime > 3 * 1000) {
-            lastTime = currentTime
-            Toast.makeText(this, "再按一下離開", Toast.LENGTH_LONG).show()
-        } else {
-            super.finish()
-        }
     }
 }

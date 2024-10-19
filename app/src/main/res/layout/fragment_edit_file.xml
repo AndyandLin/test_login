@@ -7,6 +7,7 @@
     android:background="#ffffff"
     tools:context="com.example.test_login.ui.editfile.EditFileFragment">
 
+    <!-- 顯示表單列表的標題 -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -21,19 +22,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <!-- 新增表單的按鈕 -->
     <Button
         android:id="@+id/btnAddForm"
-        android:layout_width="53dp"
-        android:layout_height="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/login_button_selector"
-        android:text="+"
+        android:text="新增表單"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/table_layout_forms"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- 用於顯示表單的 TableLayout -->
     <TableLayout
         android:id="@+id/table_layout_forms"
         android:layout_width="0dp"
@@ -45,12 +47,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
+        <!-- 定義表頭行 -->
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#BB5655"
             android:padding="8dp">
 
+            <!-- 各列標題 -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -115,6 +119,7 @@
                 android:textStyle="bold" />
         </TableRow>
 
+        <!-- 表單的資料行 -->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,23 +157,22 @@
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/edit_icon" />
+                android:background="@drawable/baseline_edit_24" />
 
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:background="@drawable/delete_icon" />
+                android:background="@drawable/baseline_delete_24" />
 
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:background="@drawable/download_icon" />
+                android:background="@drawable/baseline_arrow_circle_down_24" />
         </TableRow>
 
     </TableLayout>
-
 
     <TextView
         android:id="@+id/textView2"
@@ -184,6 +188,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- RecyclerView 顯示健康問卷表單 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_health_forms"
         android:layout_width="409dp"
@@ -197,6 +202,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.03" />
 
+    <!-- 填寫健康問卷的按鈕 -->
     <Button
         android:id="@+id/btnFillHealthSurvey"
         android:layout_width="140dp"

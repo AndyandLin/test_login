@@ -5,7 +5,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.test_login.ui.fragments.SystemAnnouncementsFragment
 import com.example.test_login.ui.fragments.ClosedCasesFragment
-import com.example.test_login.ui.fragments.CommonFormsFragment.CommonFormsFragment
+import com.example.test_login.ui.fragments.CommonFormsFragment
 
 
 class MyPagerAdapter(fragmentActivity: FragmentActivity, lifecycle: Lifecycle) :

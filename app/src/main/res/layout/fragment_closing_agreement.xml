@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5E6D3"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 標題 -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_basic_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="結案紀錄單"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="個案名" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_closing_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="結案日期 (年/月/日)"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 身分證字號 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_id_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="身分證字號"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_verify_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="帶入資料"
+                        android:textSize="15sp"
+                        app:cornerRadius="8dp"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="#C75C5C"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- 分隔線 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="結案記錄種類："
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/radio_group_closing_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_home_care"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="居家治療"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_effects_program"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="思覺失調症醫療給付改善方案"
+                        android:layout_marginStart="16dp"/>
+                </RadioGroup>
+
+                <!-- 分隔線 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="個案精神狀況："
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/radio_group_mental_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_good_mental"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="精神狀況穩定"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_poor_mental"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="精神狀況不穩定或惡化"
+                        android:layout_marginStart="16dp"/>
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_other_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="其他描述" />
+
+                <!-- 分隔線 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="結案原因："
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="8dp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_closing_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_treatment_period"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="居家治療期限制到期"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_appropriate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="適應居家生活獲得改善" />
+
+                    <RadioButton
+                        android:id="@+id/radio_psychiatric_ward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="住精神病房" />
+
+                    <RadioButton
+                        android:id="@+id/radio_effects_program_closing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="思覺失調症給付改善方案到期" />
+
+                    <RadioButton
+                        android:id="@+id/radio_community_rehabilitation_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="轉社區復健中心" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="轉社區復健中心">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinner_community_rehabilitation_center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RadioButton
+                        android:id="@+id/radio_other_reason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_other_reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="請填寫其他原因" />
+                </RadioGroup>
+
+                <!-- 分隔線 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D3D3D3"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="橫向連結"
+                    android:textColor="@color/text_red"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="8dp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_lateral_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_referral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="轉介門診" />
+
+                    <RadioButton
+                        android:id="@+id/radio_notify_health_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="通知衛生所，時間：" />
+
+                    <!-- 出生年月日 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input_birthdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="出生年月日 (年/月/日)"
+                            android:inputType="date" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RadioGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="送出"
+                    android:textSize="16sp"
+                    android:backgroundTint="@color/text_red"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         // 設定忘記密碼按鈕的點擊事件
         forgetpwd.setOnClickListener {
-            val intent = Intent(this, forget_PWD_page::class.java)
+            val intent = Intent(this, ForgetPWDPageStep1::class.java)
             startActivity(intent)
         }
 

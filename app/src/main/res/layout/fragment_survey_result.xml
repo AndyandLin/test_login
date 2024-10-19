@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#F7D9D5"
+        android:padding="24dp"
+        android:elevation="4dp"
+        android:layout_gravity="center">
+
+        <!-- 恭喜完成訊息 -->
+        <TextView
+            android:id="@+id/completionMessageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="恭喜您已完成\n本問卷填答"
+            android:textSize="20sp"
+            android:textColor="#A94444"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:lineSpacingExtra="4dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- 說明文字 -->
+        <TextView
+            android:id="@+id/detailsTextView"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="詳細情形請洽本計畫收案人員\n本問卷資料來源為台灣精神醫學學會\n《發展我國精神醫療早期介入及長效針劑臨床指引》"
+            android:textAlignment="center"
+            android:textColor="#A94444"
+            android:textSize="14sp" />
+
+        <!-- 定時跳轉提示 -->
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="以下為您填寫的基本資料："
+            android:textColor="#A94444"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif" />
+
+        <!-- 基本資料開始 -->
+        <!-- 姓名 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 出生年月日 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出生年月日："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/birthdateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出生年月日"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 聯絡電話 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="聯絡電話："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/phoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="連絡電話"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 通訊地址 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通訊地址："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通訊地址"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 婚姻狀態 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="婚姻狀態："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/maritalStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="婚姻狀態"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 教育程度 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="教育程度："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/educationLevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="教育程度"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 經濟狀況 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="經濟狀況："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/economicStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="經濟狀況"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 收案日期 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收案日期："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/caseDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收案日期"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 與家人同住 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="與家人同住："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/familyStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="與家人同住"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 工作 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/workTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 宗教信仰 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宗教信仰："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/religionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宗教信仰"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 收案地區 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收案地區："
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收案地區"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- 確認按鈕 -->
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="確認"
+            android:backgroundTint="#A94444"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+</FrameLayout>

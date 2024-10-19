@@ -1,65 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.test_login.ui.caseManagement.CaseManagementFragment">
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="16dp"
-        android:padding="8dp"
-        android:stretchColumns="*">
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="個案名"
-                android:textColor="#A52626"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="未完成單張"
-                android:textColor="#A52626"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
+        <TableLayout
+            android:id="@+id/TableLayout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:stretchColumns="*"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#EDD7CC"
-                android:gravity="center_horizontal"
-                android:padding="16dp"
-                android:text="王小明"
-                android:textColor="#A52626"
-                android:textSize="14sp" />
+            <!-- 表頭 -->
+            <TableRow
+                android:background="#ffffff">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#EDD7CC"
-                android:gravity="center_horizontal"
-                android:padding="16dp"
-                android:text="結案紀錄單"
-                android:textColor="#A52626"
-                android:textSize="14sp" />
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="個案名"
+                    android:gravity="center"
+                    android:textColor="#A52626"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="未完成單張"
+                    android:gravity="center"
+                    android:textColor="#A52626"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="王小明"
+                    android:background="#EDD7CC"
+                    android:textColor="#A52626"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="結案紀錄單"
+                    android:background="#EDD7CC"
+                    android:textColor="#A52626"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:background="#ffffff">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="陳大同"
+                    android:background="#EDD7CC"
+                    android:textColor="#A52626"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="資源轉介單"
+                    android:background="#EDD7CC"
+                    android:textColor="#A52626"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp" />
+            </TableRow>
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

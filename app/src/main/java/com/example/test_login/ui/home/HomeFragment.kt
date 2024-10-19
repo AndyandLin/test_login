@@ -2,9 +2,13 @@ package com.example.test_login.ui.home
 
 import MyPagerAdapter
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
@@ -19,6 +23,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
+    private lateinit var adapter: MyPagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,12 +37,11 @@ class HomeFragment : Fragment() {
         tabLayout = binding.tabLayout
         viewPager = binding.viewPager
 
-        // 创建并设置 ViewPager2 的适配器
-        val adapter = MyPagerAdapter(requireActivity(), lifecycle)
+        // 創建並設置 ViewPager2 的適配器
+        adapter = MyPagerAdapter(requireActivity(), lifecycle)
         viewPager.adapter = adapter
 
-
-        // 绑定 TabLayout 和 ViewPager2
+        // 綁定 TabLayout 和 ViewPager2
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> tab.text = "系統公告"
@@ -45,14 +49,11 @@ class HomeFragment : Fragment() {
                 2 -> tab.text = "將結案之個案"
             }
         }.attach()
-
-        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        _binding = null // 釋放綁定的視圖
     }
 }

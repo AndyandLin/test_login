@@ -1,56 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 根元素 <layout>，用於 Data Binding -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- <data> 元素內部定義了數據變量 -->
     <data>
-        <!-- 定義了一個變量 formItem，類型是 FormItem -->
         <variable
             name="formItem"
             type="com.example.test_login.ui.editfile.FormItem" />
     </data>
 
-    <!-- 根布局為 LinearLayout，垂直方向排列 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- 定義了一個 TextView 用於顯示類型 -->
+        <!-- 顯示問卷編號 -->
         <TextView
-            android:id="@+id/typeTextView"
-            android:layout_width="wrap_content"
+            android:id="@+id/questionIdTextView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{formItem.type}"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"/>
-
-        <!-- 定義了一個 TextView 用於顯示編號 -->
-        <TextView
-            android:id="@+id/numberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{formItem.formId}"
+            android:text="@{formItem.questionId}"
             android:textSize="16sp"
-            android:textColor="@android:color/darker_gray"/>
+            android:textColor="@android:color/black"/>
 
-        <!-- 定義了一個 TextView 用於顯示案號 -->
-        <TextView
-            android:id="@+id/caseIdTextView"
-            android:layout_width="wrap_content"
+        <!-- 顯示日期和收案人員 -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{formItem.caseId}"
-            android:textSize="16sp"
-            android:textColor="@android:color/darker_gray"/>
+            android:orientation="horizontal">
 
-        <!-- 定義了一個 TextView 用於顯示日期 -->
-        <TextView
-            android:id="@+id/dateTextView"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{formItem.date}"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/collectorTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{formItem.collector}"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!-- 操作圖標 -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{formItem.date}"
-            android:textSize="16sp"
-            android:textColor="@android:color/darker_gray"/>
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageView
+                android:id="@+id/editImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/baseline_edit_24"
+                android:contentDescription="@string/edit"
+                android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="24dp"
+                android:maxWidth="24dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/deleteImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/baseline_delete_24"
+                android:contentDescription="@string/delete"
+                android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="24dp"
+                android:maxWidth="24dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/downloadImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/baseline_arrow_circle_down_24"
+                android:contentDescription="@string/download"
+                android:adjustViewBounds="true"
+                android:maxHeight="24dp"
+                android:maxWidth="24dp"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
     </LinearLayout>
 </layout>

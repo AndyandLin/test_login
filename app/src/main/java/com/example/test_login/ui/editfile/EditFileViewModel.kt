@@ -7,23 +7,13 @@ import androidx.lifecycle.ViewModel
 // 定義一個繼承自 ViewModel 的類別 EditFileViewModel
 class EditFileViewModel : ViewModel() {
 
-    // 定義一個 MutableLiveData 變數，用來存放和觀察文字數據
-    private val _text = MutableLiveData<String>().apply {
-        // 初始化 MutableLiveData 變數的值為 "Edit file"
-        value = "Edit file"
-    }
-    // 將 MutableLiveData 變數轉換為不可變的 LiveData，提供給外部觀察
-    val text: LiveData<String> = _text
-
-    // 定義一個 MutableLiveData 變數，用來存放和觀察表單數據列表
     private val _formItems = MutableLiveData<List<FormItem>>().apply {
-        // 初始化表單數據列表，包含多個 FormItem
         value = listOf(
-            FormItem("SA", "PUB_SA_10000", "PUB", "Nov. 30, 2023, 1:36 p.m."),
-            FormItem("SA", "PUB_SA_10001", "PUB", "Nov. 30, 2023, 1:36 p.m.")
-            // 需要時可以繼續添加更多項目
+            FormItem("TTPC_SA_20241007080001", "2024-10-07 07:59", "chwu", "編輯", "刪除", "下載"),
+            FormItem("TTPC_SA_20241008103614", "2024-10-08 10:35", "chwu", "編輯", "刪除", "下載"),
+            FormItem("TTPC_SA_20241014131514", "2024-10-14 13:14", "chwu", "編輯", "刪除", "下載")
+            // 可以繼續添加更多項目
         )
     }
-    // 將 MutableLiveData 變數轉換為不可變的 LiveData，提供給外部觀察
     val formItems: LiveData<List<FormItem>> = _formItems
 }

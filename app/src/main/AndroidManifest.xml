@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- 設定應用所需的權限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,10 +11,10 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test_login"
-        android:networkSecurityConfig="@xml/network_security_config"
         tools:targetApi="31">
 
         <activity
@@ -23,28 +22,26 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- 新增 Home_page_Act 的配置 -->
+        </activity> <!-- 新增 Home_page_Act 的配置 -->
         <activity
             android:name="com.example.test_login.Home_page_Act"
             android:exported="false"
-            android:label="@string/title_activity_home_page" />
-
-        <!-- 新增 addnewpower_page 的配置 -->
+            android:label="@string/title_activity_home_page" /> <!-- 新增 addnewpower_page 的配置 -->
         <activity
             android:name="com.example.test_login.addnewpower_page"
             android:exported="false"
-            android:label="@string/add_new_power_page" />
-
-        <!-- 新增 forget_PWD_page 的配置 -->
+            android:label="@string/add_new_power_page" /> <!-- 新增 forget_PWD_page 的配置 -->
         <activity
-            android:name="com.example.test_login.forget_PWD_page"
+            android:name="com.example.test_login.ForgetPWDPageStep1"
             android:exported="false"
-            android:label="@string/forget_pwd_page" />
-
+            android:label="@string/forget_pwd_page1" />
+        <activity
+            android:name="com.example.test_login.ForgetPWDPageStep2"
+            android:exported="false"
+            android:label="@string/forget_pwd_page2" />
     </application>
 
 </manifest>

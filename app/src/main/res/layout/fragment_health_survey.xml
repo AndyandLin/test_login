@@ -1,28 +1,904 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#F8F6F0"
     android:padding="16dp">
 
-    <!-- Add your survey questions here, for example -->
-    <TextView
-        android:id="@+id/question1TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我到人多的地方，無法應付那種壓力很大的感覺。"/>
-
-    <Spinner
-        android:id="@+id/answer1Spinner"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/yes_no_options"/>
+        android:orientation="vertical">
 
-    <!-- Add more questions and answer options as needed -->
+        <!-- 基本資料卡片 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#E0E0E0"
+            app:strokeWidth="1dp">
 
-    <Button
-        android:id="@+id/submitSurveyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提交問卷"/>
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#ffffff">
+                <!-- #EDD7CC -->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/formTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="腦健康速測量表－基本資料"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_red"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 姓名 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 性別 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="性別">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/maleAutoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 出生年月日 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/birthdateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="出生年月日 (年/月/日)"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 聯絡電話 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="聯絡電話"
+                        android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 通訊地址 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addressEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="通訊地址"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 婚姻狀態 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="婚姻狀態">
+
+                <AutoCompleteTextView
+                    android:id="@+id/maritalStatusAutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 教育程度 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="教育程度">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/educationLevelAutoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 經濟狀況 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="經濟狀況">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/economicStatusAutoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 收案日期 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/caseDateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="收案日期 (年/月/日)"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 與家人同住 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="與家人同住:"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/livingWithFamilyRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/livingWithFamilyNoRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="無" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/livingWithFamilyYesRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="有" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/familyRelationEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/text_red"
+                            android:hint="請輸入與家人的關係"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RadioGroup>
+
+                <!-- 工作 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="工作:"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/jobRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/jobNoneRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="無" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/jobFullTimeRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="有(全職)" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/jobPartTimeRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="部分工時(兼職)" />
+                </RadioGroup>
+
+                <!-- 宗教信仰 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="宗教信仰:"
+                    android:textSize="22sp"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/religionRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionNoneRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="無" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionBuddhismRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="佛教" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionTaoismRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="道教" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionChristianityRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="基督教" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionCatholicRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="天主教" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionIslamRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="回教" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/religionOtherRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="其他" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/otherReligionEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="請輸入其他宗教信仰"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RadioGroup>
+
+                <!-- 收案地區 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收案地區:"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/regionRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionNantouRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="南投" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionCaotunRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="草屯" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionGuoxingRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="國姓" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionPuliRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="埔里" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionZhushanRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="竹山" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionShuiliRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="水里" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionDaliRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="大里" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionWufengRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="霧峰" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionMainHospitalRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="本院" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/regionOtherRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_red"
+                        android:text="其他" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/otherRegionEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="請輸入其他地區"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RadioGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 15題問卷卡片 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#E0E0E0"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f7efe8"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <!-- #F8F6F0 -->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="腦健康速測量表"
+                    android:textColor="@color/text_red"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <!-- 問題1 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="1. 我到人多的地方，無法應付那種壓力很大的感覺。"
+                    android:textColor="@color/text_red"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/question1RadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question1Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question1No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 第二題 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="2. 我覺得我無法親近別人。"
+                    android:textColor="@color/text_red"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/question2RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question2Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question2No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 3 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="3. 我做什麼事情，都提不起勁。"
+                    android:textColor="@color/text_red"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/question3RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question3Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question3No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 4 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="4.我覺得腦力不夠，想一下事情，唸一些東西，就覺得疲倦。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question4RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question4Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question4No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 5 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="5.當有別人在場時，我大部分時間都保持沉默。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question5RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question5Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question5No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 6 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="6.我有時會擔心朋友或同事對自己不忠或不值得信任。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question6RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question6Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question6No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 7 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="7.我儘量不吐露自己的心聲。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question7RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question7Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question7No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 8 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="8.如果必須在一大群人面前講話，我會覺得非常的焦慮不安。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question8RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question8Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question8No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 9 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="9.我做事(唸書)不能持久，一下子就想休息。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question9RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question9Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question9No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 10 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="10.我覺得對什麼事情，總是處理得不好。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question10RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question10Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question10No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 11 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="11.我不會表情生動地講話。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question11RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question11Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question11No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 12 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="12.我不善於社交禮儀的應對。"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question12RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question12Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question12No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 13 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="13.當你看到別人在交談時，會懷疑他們正在談論你嗎？"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question13RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question13Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question13No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 14 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="14.你是不是常常從別人的談話或作為上，發覺背後藏有威脅或怪罪的味道？"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question14RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question14Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question14No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+
+                <!-- 問題 15 -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15. 會不會聽到某些音、叫聲、或叫自己名字的聲音呢？"
+                    android:textColor="@color/text_red" />
+
+                <RadioGroup
+                    android:id="@+id/question15RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question15Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/question15No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="否" />
+                </RadioGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 提交按鈕 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提交資料"
+            android:backgroundTint="#C75C5C"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="12dp"
+            app:cornerRadius="8dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -35,7 +35,52 @@
             android:stretchColumns="*"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- 表頭 -->
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="姓名"
+                    android:textColor="#721C24"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="個案編號"
+                    android:textColor="#721C24"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="身分證號碼"
+                    android:textColor="#721C24"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="開案日期"
+                    android:textColor="#721C24"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="單張內容"
+                    android:textColor="#721C24"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="狀態"
+                    android:textColor="#721C24"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+            </TableRow>
         </TableLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

@@ -1,7 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="yes_no_options">
         <item>是</item>
         <item>否</item>
+    </string-array>
+
+    <!-- 婚姻狀況 -->
+    <string-array name="marital_status_options">
+        <item>未婚單身</item>
+        <item>未婚同居</item>
+        <item>已婚同居</item>
+        <item>已婚分居</item>
+        <item>離婚</item>
+        <item>喪偶</item>
+        <item>再婚</item>
+        <item>其他</item>
+    </string-array>
+
+    <!-- 教育程度 -->
+    <string-array name="education_level_options">
+        <item>不識字</item>
+        <item>小學</item>
+        <item>國中</item>
+        <item>高中(職)</item>
+        <item>專科</item>
+        <item>大學</item>
+        <item>研究所以上</item>
+    </string-array>
+
+    <!-- 經濟狀況 -->
+    <string-array name="economic_status_options">
+        <item>一般戶</item>
+        <item>低收入戶證明</item>
+    </string-array>
+
+    <!-- 性別 -->
+    <string-array name="gender_options">
+        <item>男性</item>
+        <item>女性</item>
+        <item>其他</item>
+    </string-array>
+
+
+    <!-- 教育程度(初評單) -->
+    <string-array name="education_level_byfirst">
+        <item>不識字</item>
+        <item>小學</item>
+        <item>國(初)中</item>
+        <item>高中(職)肆</item>
+        <item>高中(職)</item>
+        <item>五專、二專肆</item>
+        <item>五專、二專</item>
+        <item>三專、大學肆</item>
+        <item>三專、大學</item>
+        <item>研究所以上</item>
+        <item>不詳</item>
+    </string-array>
+
+    <!-- 居住狀況(初評單) -->
+    <string-array name="living_situation_options_byfirst">
+        <item>家人同住</item>
+        <item>朋友同住</item>
+        <item>獨居</item>
+    </string-array>
+
+    <!-- 情緒狀態(初評單) -->
+    <string-array name="emotion_status_options_byfirst">
+        <item>無異狀</item>
+        <item>低落</item>
+        <item>高昂</item>
+        <item>緊張焦慮</item>
+        <item>表情冷漠</item>
+        <item>不適切</item>
+    </string-array>
+
+    <!-- 就業狀態(初評單) -->
+    <string-array name="employment_status_options_byfirst">
+        <item>就業中</item>
+        <item>主婦</item>
+        <item>學生</item>
+        <item>從未就業</item>
+        <item>失業</item>
+        <item>服役</item>
+        <item>退休</item>
+        <item>不詳</item>
+    </string-array>
+
+    <!-- 婚姻狀況(初評單) -->
+    <string-array name="marital_status_options_byfirst">
+        <item>未婚</item>
+        <item>未婚同居</item>
+        <item>已婚同居</item>
+        <item>已婚分居</item>
+        <item>離婚</item>
+        <item>喪偶</item>
+        <item>再婚</item>
+        <item>不詳</item>
+    </string-array>
+
+    <!-- 與個案關係(初評單) -->
+    <string-array name="relationship_options_byfirst">
+        <item>監護人</item>
+        <item>法定代理人</item>
+        <item>配偶</item>
+        <item>父母</item>
+        <item>家屬</item>
+        <item>其他(請說明)</item>
+    </string-array>
+
+    <!-- 分數最高3分(初評單) -->
+    <string-array name="score3_byfirst">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <!-- 分數最高4分(初評單) -->
+    <string-array name="score4_byfirst">
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <!-- 分數最高5分(初評單) -->
+    <string-array name="score5_byfirst">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <!-- 分數最高6分(初評單) -->
+    <string-array name="score6_byfirst">
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <!-- PSP量表分數最高6分(初評單) -->
+    <string-array name="PSP_score6_byfirst">
+        <item>1.無</item>
+        <item>2.輕度</item>
+        <item>3.中度</item>
+        <item>4.中重度</item>
+        <item>5.重度</item>
+        <item>6.極重度</item>
+    </string-array>
+
+    <!-- 照顧者負荷量表（CBI）分數最高4分(初評單) -->
+    <string-array name="CBI_score4_byfirst">
+        <item>0.從不</item>
+        <item>1.很少如此</item>
+        <item>2.有時候</item>
+        <item>3.經常如此</item>
+        <item>4.總是如此</item>
+    </string-array>
+
+    <!-- 轉社區復健中心(結案單) -->
+    <string-array name="community_rehabilitation_center">
+        <item>轉其他醫院(內外科)</item>
+        <item>失聯</item>
+        <item>病人或家屬態度欠合作或拒訪</item>
+        <item>搬遷</item>
+        <item>死亡</item>
+        <item>入監</item>
     </string-array>
 </resources>
