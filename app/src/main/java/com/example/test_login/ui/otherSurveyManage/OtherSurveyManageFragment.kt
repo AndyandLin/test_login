@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,12 +46,18 @@ class OtherSurveyManageFragment : Fragment() {
         recyclerView.adapter = SurveyAdapter(surveyList) { surveyForm ->
             navigateToSurveyDetail(surveyForm)
         }
+
+        // 返回按鈕導航至 EditFileFragment
+        val btnBack = view.findViewById<Button>(R.id.btnBack)
+        btnBack.setOnClickListener {
+            findNavController().navigate(OtherSurveyManageFragmentDirections.actionOtherSurveyManageFragmentToEditFileFragment())
+        }
     }
 
     // 點擊後導航至相應的 Fragment
     private fun navigateToSurveyDetail(surveyForm: SurveyForm) {
         val navController = findNavController()
-        Log.d("OtherSurveyManageFragment", "Navigating to: ${surveyForm.name}") // 添加日志记录
+        Log.d("OtherSurveyManageFragment", "Navigating to: ${surveyForm.name}") // 添加日誌紀錄
         when (surveyForm.name) {
             "初次評估單-病情病症評估" -> {
                 val action = OtherSurveyManageFragmentDirections

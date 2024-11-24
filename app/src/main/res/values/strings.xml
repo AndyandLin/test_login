@@ -24,4 +24,16 @@
     <string name="edit">edit</string>
     <string name="delete">delete</string>
     <string name="download">download</string>
+    <string name="unknown_name">未知姓名</string>
+    <string name="unknown_birthday">未知生日</string>
+    <string name="unknown_phone">未知電話</string>
+    <string name="unknown_address">未知地址</string>
+    <string name="unknown_marital_status">未知婚姻狀態</string>
+    <string name="unknown_education">未知教育程度</string>
+    <string name="unknown_economic_status">未知經濟狀況</string>
+    <string name="unknown_case_date">未知收案日期</string>
+    <string name="unknown_family_status">未知家庭</string>
+    <string name="unknown_work">未知工作</string>
+    <string name="unknown_religion">未知宗教信仰</string>
+    <string name="unknown_location">未知收案地區</string>
 </resources>

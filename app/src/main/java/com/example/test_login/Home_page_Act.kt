@@ -20,10 +20,6 @@ class Home_page_Act : AppCompatActivity() {
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 獲取工具欄並設置為活動的操作欄
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
         // 獲取底部導航視圖
         val navView: BottomNavigationView = findViewById(R.id.nav_View)
 
@@ -40,8 +36,6 @@ class Home_page_Act : AppCompatActivity() {
             )
         )
 
-        // 設置導航控制器與操作欄的關係
-        setupActionBarWithNavController(navController, appBarConfiguration)
         // 將底部導航視圖與導航控制器關聯
         navView.setupWithNavController(navController)
     }

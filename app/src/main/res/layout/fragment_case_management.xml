@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textTitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="進行中個案"
-            android:textColor="#BB5655"
+            android:textColor="@color/text_red"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"

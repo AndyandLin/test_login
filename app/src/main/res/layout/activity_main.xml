@@ -17,23 +17,23 @@
             android:id="@+id/loginCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
+            app:cardElevation="8dp"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="66dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     app:srcCompat="@drawable/logo" />
@@ -46,7 +46,7 @@
                     android:text="醫護人員單張填寫系統"
                     android:textAlignment="center"
                     android:textColor="@color/blue"
-                    android:textSize="24sp"
+                    android:textSize="26sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -57,7 +57,7 @@
                     android:layout_marginBottom="16dp"
                     android:text="請輸入員工編號與密碼"
                     android:textColor="#FF8492A6"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -71,13 +71,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="員工編號"
+
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="36dp"
                     app:boxBackgroundColor="@android:color/white"
                     app:passwordToggleEnabled="true"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -98,8 +99,9 @@
                     android:backgroundTint="@color/blue"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    app:cornerRadius="8dp" />
-
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -118,7 +120,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="16sp"
+                android:textSize="18dp"
                 android:textColor="@color/blue"
                 android:text="@string/forget_PWD" />
 
@@ -128,11 +130,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="16sp"
+                android:textSize="18dp"
                 android:textColor="@color/blue"
                 android:text="新增權限" />
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

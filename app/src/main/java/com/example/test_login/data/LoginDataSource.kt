@@ -1,6 +1,6 @@
 package com.example.test_login.data
 
-import com.example.test_login.data.model.LoggedInUser
+import com.example.test_login.data.model.LoggedInUserEntity
 import java.io.IOException
 
 /**
@@ -8,10 +8,10 @@ import java.io.IOException
  */
 class LoginDataSource {
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
+    fun login(username: String, password: String): Result<LoggedInUserEntity> {
         try {
             // TODO: handle loggedInUser authentication
-            val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "Jane Doe")
+            val fakeUser = LoggedInUserEntity(java.util.UUID.randomUUID().toString(), "Jane Doe")
             return Result.Success(fakeUser)
         } catch (e: Throwable) {
             return Result.Error(IOException("Error logging in", e))

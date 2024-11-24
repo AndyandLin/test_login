@@ -8,21 +8,22 @@
     tools:context="com.example.test_login.ui.editfile.EditFileFragment">
 
     <!-- 顯示表單列表的標題 -->
-    <TextView
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="表單列表"
-        android:textColor="#BB5655"
+        android:textColor="@color/text_red"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/table_layout_forms"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 新增表單的按鈕 -->
     <Button
         android:id="@+id/btnAddForm"
         android:layout_width="wrap_content"
@@ -180,7 +181,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="腦健康問卷表單列表"
-        android:textColor="#BB5655"
+        android:textColor="@color/text_red"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/recycler_view_health_forms"

@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_edit_file">
         <action
             android:id="@+id/action_editFileFragment_to_healthSurveyFragment"
-            app:destination="@id/navigation_health_survey" />
+            app:destination="@id/navigation_brain_health" />
         <action
             android:id="@+id/action_editFileFragment_to_otherSurveyFragment"
             app:destination="@id/navigation_other_survey_manage" />
@@ -38,12 +38,12 @@
 
     <!-- 腦健康問券 -->
     <fragment
-        android:id="@+id/navigation_health_survey"
-        android:name="com.example.test_login.ui.healthsurvey.HealthSurveyFragment"
+        android:id="@+id/navigation_brain_health"
+        android:name="com.example.test_login.ui.BrainHealth.BrainHealthFragment"
         android:label="title_health_survey"
-        tools:layout="@layout/fragment_health_survey">
+        tools:layout="@layout/fragment_brain_health">
         <action
-            android:id="@+id/action_healthSurveyFragment_to_surveyResultFragment"
+            android:id="@+id/action_brainHealthFragment_to_surveyResultFragment"
             app:destination="@id/navigation_survey_result" /> <!-- 導航到 SurveyResultFragment -->
     </fragment>
 
@@ -64,26 +64,36 @@
         android:name="com.example.test_login.ui.otherSurveyManage.OtherSurveyManageFragment"
         android:label="title_other_survey_manage"
         tools:layout="@layout/fragment_other_survey_manage" >
-    <action
-        android:id="@+id/action_otherSurveyManageFragment_to_firstEvaluationFragment"
-        app:destination="@id/firstEvaluationFragment" />
+        <!-- 導航至 EditFileFragment 的動作 -->
+        <action
+            android:id="@+id/action_otherSurveyManageFragment_to_editFileFragment"
+            app:destination="@id/navigation_edit_file" />
+        <action
+            android:id="@+id/action_otherSurveyManageFragment_to_firstEvaluationFragment"
+            app:destination="@id/firstEvaluationFragment" />
         <action
             android:id="@+id/action_otherSurveyManageFragment_to_closingAgreementFragment"
             app:destination="@id/closingAgreementFragment" />
     </fragment>
 
-    <!-- 初次評估單 -->
     <fragment
         android:id="@+id/firstEvaluationFragment"
         android:name="com.example.test_login.ui.survey.FirstEvaluationFragment"
         android:label="初次評估單"
-        tools:layout="@layout/fragment_first_evaluation" />
+        tools:layout="@layout/fragment_first_evaluation">
+        <action
+            android:id="@+id/action_firstEvaluationFragment_to_navigation_other_survey_manage"
+            app:destination="@id/navigation_other_survey_manage" />
+    </fragment>
 
     <!-- 結案單 -->
     <fragment
         android:id="@+id/closingAgreementFragment"
         android:name="com.example.test_login.ui.survey.ClosingAgreementFragment"
         android:label="結案單"
-        tools:layout="@layout/fragment_closing_agreement" />
-
+        tools:layout="@layout/fragment_closing_agreement">
+    <action
+        android:id="@+id/action_closingAgreementFragment_to_navigation_other_survey_manage"
+        app:destination="@id/navigation_other_survey_manage" />
+    </fragment>
 </navigation>

@@ -18,6 +18,8 @@ import android.widget.NumberPicker
 import android.widget.RadioGroup
 import android.widget.AutoCompleteTextView
 import android.widget.RadioButton
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.example.myapplication.databinding.FragmentFirstEvaluationBinding
 
@@ -107,7 +109,6 @@ class FirstEvaluationFragment : Fragment() {
         setupExposedDropdownMenu(binding.spinnerQuestion11, R.array.CBI_score4_byfirst)
         setupExposedDropdownMenu(binding.spinnerQuestion12, R.array.CBI_score4_byfirst)
 
-
         // 初始化「思考、妄想」選項
         thoughtsLayout = view.findViewById(R.id.layout_thoughts)
         checkDelusions = view.findViewById(R.id.check_thoughts_delusions)
@@ -133,6 +134,33 @@ class FirstEvaluationFragment : Fragment() {
 
         setupRadioGroup()
         setupReferralOptions()
+
+        // 設置提交按鈕的點擊事件
+        binding.btnSubmit.setOnClickListener {
+            if (validateInputs()) {
+                submitData()
+                navigateToOtherSurveyManage()
+            }
+        }
+    }
+
+    private fun validateInputs(): Boolean {
+        // 在這裡添加驗證邏輯
+        // 檢查所有必填字段是否已填寫
+        // 如果所有必填字段都已填寫，返回 true，否則返回 false
+        return true
+    }
+
+    private fun submitData() {
+        // 在這裡添加數據提交邏輯
+        // 可以將數據保存到數據庫或發送到服務器
+        // 目前只是顯示一個提示訊息
+        Toast.makeText(requireContext(), "數據已提交", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToOtherSurveyManage() {
+        // 使用 NavController 導航到 navigation_other_survey_manage
+        findNavController().navigate(R.id.action_firstEvaluationFragment_to_navigation_other_survey_manage)
     }
 
     private fun setupExposedDropdownMenu(autoCompleteTextView: AutoCompleteTextView, arrayResId: Int) {
